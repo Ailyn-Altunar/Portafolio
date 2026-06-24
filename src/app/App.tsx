@@ -17,8 +17,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// ── Data ──────────────────────────────────────────────────────────────────────
-
 const NAV_LINKS = [
   { label: "Sobre mí", href: "#about" },
   { label: "Habilidades", href: "#skills" },
@@ -29,25 +27,19 @@ const NAV_LINKS = [
 
 const SKILLS = {
   "Bases de Datos": [
-    { name: "PostgreSQL", level: 92 },
-    { name: "MySQL / MariaDB", level: 88 },
-    { name: "Oracle DB", level: 78 },
+    { name: "PostgreSQL", level: 90 },
+    { name: "MySQL / MariaDB", level: 80 },
     { name: "SQL Server", level: 80 },
-    { name: "MongoDB", level: 72 },
-    { name: "Redis", level: 68 },
   ],
   "Backend & APIs": [
-    { name: "Node.js", level: 82 },
-    { name: "Python (FastAPI)", level: 85 },
+    { name: "Java", level: 80 },
     { name: "REST APIs", level: 90 },
-    { name: "GraphQL", level: 70 },
-    { name: "Docker", level: 74 },
+    { name: "Docker", level: 70 },
   ],
   "Documentación & Modelado": [
     { name: "SQL DDL / DML", level: 95 },
     { name: "Modelado E-R", level: 90 },
     { name: "Swagger / OpenAPI", level: 85 },
-    { name: "Markdown / Docusaurus", level: 88 },
     { name: "Diagramas UML", level: 80 },
   ],
 };
@@ -128,7 +120,6 @@ const EXPERIENCE = [
   },
 ];
 
-// ── Sub-components ────────────────────────────────────────────────────────────
 
 function SkillBar({ name, level }: { name: string; level: number }) {
   const [animated, setAnimated] = useState(false);
@@ -162,7 +153,6 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Header */}
       <div className="p-6 pb-4 flex items-start gap-3 border-b border-border">
         <div
           className="mt-0.5 p-2 rounded-md flex-shrink-0"
@@ -188,11 +178,9 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
         </div>
       </div>
 
-      {/* Body */}
       <div className="p-6 flex-1 flex flex-col gap-4">
         <p className="text-sm text-muted-foreground leading-relaxed">{project.desc}</p>
 
-        {/* SQL snippet */}
         <div
           className="rounded-md overflow-hidden border border-border flex-1 transition-all duration-300"
           style={{ background: "#060a14" }}
@@ -215,8 +203,6 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
   );
 }
 
-// ── Main App ──────────────────────────────────────────────────────────────────
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -236,11 +222,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground font-['Inter',sans-serif]">
 
-      {/* ── Nav ── */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-background/90 backdrop-blur border-b border-border" : ""
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur border-b border-border" : ""
+          }`}
       >
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <span
@@ -250,7 +234,6 @@ export default function App() {
             AMHA
           </span>
 
-          {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((l) => (
               <li key={l.href}>
@@ -264,7 +247,6 @@ export default function App() {
             ))}
           </ul>
 
-          {/* CTA */}
           <a
             href="mailto:ailyn@example.com"
             className="hidden md:flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
@@ -272,7 +254,6 @@ export default function App() {
             Contáctame
           </a>
 
-          {/* Mobile menu toggle */}
           <button
             className="md:hidden text-foreground"
             onClick={() => setMenuOpen((v) => !v)}
@@ -281,7 +262,6 @@ export default function App() {
           </button>
         </nav>
 
-        {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden bg-card border-b border-border px-6 py-4 flex flex-col gap-4">
             {NAV_LINKS.map((l) => (
@@ -297,12 +277,10 @@ export default function App() {
         )}
       </header>
 
-      {/* ── Hero ── */}
       <section
         id="hero"
         className="min-h-screen flex flex-col items-center justify-center relative px-6 pt-16 overflow-hidden"
       >
-        {/* Grid background */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -311,7 +289,6 @@ export default function App() {
             backgroundSize: "48px 48px",
           }}
         />
-        {/* Glow */}
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
           style={{
@@ -321,7 +298,6 @@ export default function App() {
         />
 
         <div className="relative max-w-4xl w-full text-center flex flex-col items-center gap-6">
-          {/* Label */}
           <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 bg-card">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
@@ -329,7 +305,6 @@ export default function App() {
             </span>
           </div>
 
-          {/* Name */}
           <h1
             className="font-['Plus_Jakarta_Sans',sans-serif] text-5xl md:text-7xl font-extrabold leading-none tracking-tight text-foreground"
           >
@@ -339,7 +314,6 @@ export default function App() {
             Hernández Altunar
           </h1>
 
-          {/* Roles */}
           <div className="flex flex-wrap justify-center gap-3 mt-2">
             {[
               { icon: <Database size={14} />, label: "Database Engineer" },
@@ -356,14 +330,12 @@ export default function App() {
             ))}
           </div>
 
-          {/* Subtitle */}
           <p className="max-w-xl text-base text-muted-foreground leading-relaxed">
             Diseño y optimizo bases de datos relacionales, construyo APIs robustas y
             documento sistemas para que los equipos puedan entender, mantener y escalar
             el software.
           </p>
 
-          {/* Actions */}
           <div className="flex flex-wrap justify-center gap-4 mt-2">
             <button
               onClick={() => scrollTo("#projects")}
@@ -379,7 +351,6 @@ export default function App() {
             </button>
           </div>
 
-          {/* Terminal snippet */}
           <div
             className="mt-8 w-full max-w-lg rounded-lg border border-border overflow-hidden text-left"
             style={{ background: "#060a14" }}
@@ -425,17 +396,14 @@ export default function App() {
           </div>
         </div>
 
-        {/* Scroll cue */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground/40">
           <span className="text-xs font-mono tracking-widest uppercase">scroll</span>
           <ChevronDown size={16} className="animate-bounce" />
         </div>
       </section>
 
-      {/* ── About ── */}
       <section id="about" className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* Image side */}
           <div className="relative">
             <div
               className="w-full aspect-[4/3] rounded-lg overflow-hidden border border-border"
@@ -446,7 +414,6 @@ export default function App() {
                 alt="Programadora trabajando con bases de datos"
                 className="w-full h-full object-cover opacity-60"
               />
-              {/* Overlay stats */}
               <div className="absolute bottom-0 left-0 right-0 p-5 grid grid-cols-3 gap-3 bg-gradient-to-t from-background/90 to-transparent">
                 {[
                   { n: "3+", label: "Años exp." },
@@ -462,11 +429,9 @@ export default function App() {
                 ))}
               </div>
             </div>
-            {/* Accent corner */}
             <div className="absolute -bottom-3 -right-3 w-24 h-24 border-b-2 border-r-2 border-primary/30 rounded-br-lg pointer-events-none" />
           </div>
 
-          {/* Text side */}
           <div className="flex flex-col gap-6">
             <div>
               <p className="text-xs font-mono tracking-widest uppercase text-primary mb-3">
@@ -484,12 +449,11 @@ export default function App() {
               consultas y ayudar a los equipos a entender sus propios sistemas.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Trabajo con PostgreSQL, MySQL, Oracle y motores NoSQL. En el backend
-              construyo APIs con Python y Node.js, y documento todo con Swagger,
-              OpenAPI y Markdown para que la integración sea sencilla.
+              Trabajo con PostgreSQL y MySQL. En el backend construyo APIs
+              y documento todo con Swagger, OpenAPI y Markdown para que la integración sea sencilla.
             </p>
             <div className="flex flex-wrap gap-2 mt-2">
-              {["PostgreSQL", "FastAPI", "Node.js", "OpenAPI", "ETL", "PL/SQL"].map(
+              {["PostgreSQL", "API rápida", "OpenAPI", "ETL", "PL/SQL"].map(
                 (tag) => (
                   <span
                     key={tag}
@@ -504,7 +468,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Skills ── */}
       <section id="skills" className="py-24 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
@@ -516,39 +479,35 @@ export default function App() {
             </h2>
           </div>
 
-          {/* Tabs */}
           <div className="flex flex-wrap gap-2 mb-10">
             {Object.keys(SKILLS).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveSkillTab(tab)}
-                className={`px-4 py-2 rounded-md text-sm font-medium font-mono transition-all duration-200 ${
-                  activeSkillTab === tab
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border text-muted-foreground hover:text-foreground hover:border-white/20"
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium font-mono transition-all duration-200 ${activeSkillTab === tab
+                  ? "bg-primary text-primary-foreground"
+                  : "border border-border text-muted-foreground hover:text-foreground hover:border-white/20"
+                  }`}
               >
                 {tab}
               </button>
             ))}
           </div>
 
-          {/* Skill bars */}
           <div className="grid md:grid-cols-2 gap-6">
             {SKILLS[activeSkillTab as keyof typeof SKILLS].map((skill) => (
               <SkillBar key={skill.name} name={skill.name} level={skill.level} />
             ))}
           </div>
 
-          {/* Tech logos strip */}
           <div className="mt-14 pt-8 border-t border-border">
             <p className="text-xs font-mono text-muted-foreground mb-6 tracking-widest uppercase">
               Tecnologías con las que trabajo
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                "PostgreSQL","MySQL","Oracle","MongoDB","Redis","SQL Server",
-                "FastAPI","Node.js","Docker","Python","Swagger","Docusaurus",
+                "PostgreSQL", "MySQL", "SQL Server",
+                "Java", "Swagger",
               ].map((t) => (
                 <span
                   key={t}
@@ -563,7 +522,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Projects ── */}
       <section id="projects" className="py-24 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
@@ -583,7 +541,7 @@ export default function App() {
 
           <div className="mt-10 text-center">
             <a
-              href="https://github.com"
+              href="https://github.com/Ailyn-Altunar"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 border border-border px-5 py-2.5 rounded-md hover:border-white/20"
@@ -596,7 +554,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Experience ── */}
       <section id="experience" className="py-24 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
@@ -609,13 +566,11 @@ export default function App() {
           </div>
 
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-0 top-2 bottom-2 w-px bg-border hidden md:block" />
 
             <div className="flex flex-col gap-10">
               {EXPERIENCE.map((e, i) => (
                 <div key={i} className="md:pl-10 relative">
-                  {/* Dot */}
                   <div className="hidden md:block absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px] ring-4 ring-background" />
 
                   <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
@@ -635,7 +590,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Contact ── */}
       <section
         id="contact"
         className="py-24 px-6 border-t border-border"
@@ -643,7 +597,6 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="rounded-xl border border-border bg-card overflow-hidden">
             <div className="grid md:grid-cols-2">
-              {/* Left */}
               <div className="p-10 md:p-14 flex flex-col gap-6 border-b md:border-b-0 md:border-r border-border">
                 <p className="text-xs font-mono tracking-widest uppercase text-primary">
                   05 / Contacto
@@ -658,9 +611,9 @@ export default function App() {
                 </p>
                 <div className="flex flex-col gap-3 mt-2">
                   {[
-                    { icon: <Mail size={16} />, label: "ailyn@example.com", href: "mailto:ailyn@example.com" },
-                    { icon: <Github size={16} />, label: "github.com/ailyn-mha", href: "https://github.com" },
-                    { icon: <Linkedin size={16} />, label: "linkedin.com/in/ailyn-mha", href: "https://linkedin.com" },
+                    { icon: <Mail size={16} />, label: "ailyn.hernandez.altunar@gmail.com", href: "mailto:ailyn.hernandez.altunar@gmail.com" },
+                    { icon: <Github size={16} />, label: "github.com/Ailyn-Altunar", href: "https://github.com/Ailyn-Altunar" },
+                    { icon: <Linkedin size={16} />, label: "linkedin.com/in/ailynaltunar-design", href: "https://linkedin.com/in/ailynaltunar-design" },
                   ].map((link) => (
                     <a
                       key={link.label}
@@ -678,7 +631,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Right — form */}
               <form
                 className="p-10 md:p-14 flex flex-col gap-5"
                 onSubmit={(e) => e.preventDefault()}
@@ -725,7 +677,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Footer ── */}
       <footer className="border-t border-border py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-muted-foreground/50">
