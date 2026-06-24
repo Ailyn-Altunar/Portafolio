@@ -27,20 +27,19 @@ const NAV_LINKS = [
 
 const SKILLS = {
   "Bases de Datos": [
-    { name: "PostgreSQL", level: 90 },
-    { name: "MySQL / MariaDB", level: 80 },
-    { name: "SQL Server", level: 80 },
+    { name: "PostgreSQL", level: "Basico" },
+    { name: "MySQL / MariaDB", level: "Intermedio" },
+    { name: "SQL Server", level: "Basico" },
   ],
   "Backend & APIs": [
-    { name: "Java", level: 80 },
-    { name: "REST APIs", level: 90 },
-    { name: "Docker", level: 70 },
+    { name: "Java", level: "Basico" },
+    { name: "REST APIs", level: "Basico" },
   ],
   "Documentación & Modelado": [
-    { name: "SQL DDL / DML", level: 95 },
-    { name: "Modelado E-R", level: 90 },
-    { name: "Swagger / OpenAPI", level: 85 },
-    { name: "Diagramas UML", level: 80 },
+    { name: "SQL DDL / DML", level: "Basico" },
+    { name: "Modelado E-R", level: "Basico" },
+    { name: "Swagger / OpenAPI", level: "Basico" },
+    { name: "Diagramas UML", level: "Basico" },
   ],
 };
 
@@ -48,7 +47,7 @@ const PROJECTS = [
   {
     title: "Sistema de Inventario Hospitalario",
     desc: "Base de datos relacional para gestión de insumos médicos con triggers de alerta de stock mínimo, vistas materializadas para reportes y procedimientos almacenados para auditoría.",
-    tags: ["PostgreSQL", "PL/pgSQL", "Triggers", "Vistas"],
+    tags: ["PostgreSQL", "PL/pgSQL", "Vistas"],
     icon: <Database size={20} />,
     accent: "#00c9a7",
     sql: `CREATE MATERIALIZED VIEW vw_stock_critico AS
