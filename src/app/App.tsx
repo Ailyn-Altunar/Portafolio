@@ -50,35 +50,49 @@ const PROJECTS = [
     desc: "ErgoHabit Backend es una API REST robusta, escalable y de alto rendimiento diseñada bajo el paradigma de Arquitectura Hexagonal (Ports and Adapters) y guiada estrictamente por los principios SOLID y Clean Architecture. Su propósito principal es servir como el motor de inteligencia y persistencia para la aplicación móvil de gestión de hábitos y monitoreo de ergonomía cervical.",
     tags: ["Kotlin", "Ktor", "PostgreSQL", "Hexagonal Architecture"],
     linkText: "Ver Repositorio",
-    linkUrl: "#",
+    linkUrl: "https://github.com/vianeyruizlopez/ErgoHabit.git",
   },
   {
     title: "AgroData API",
     desc: "API modular diseñada para la gestión y administración de cultivos agrícolas y talleres. Enfocada en la correcta estructuración de las responsabilidades, modularidad y la estandarización estricta de contratos de endpoints.",
     tags: ["Java", "Javalin Framework", "MVC", "SQL"],
     linkText: "Ver Repositorio",
-    linkUrl: "#",
+    linkUrl: "https://github.com/vianeyruizlopez/API-agroData.git",
+  },
+  {
+    title: "Kpop(Aplicación Móvil)",
+    desc: "Aplicación móvil que permite a los usuarios buscar, descubrir y guardar información sobre grupos y artistas de K-pop. Incluye detalles biográficos, discografía, imágenes y funcionalidades sociales.",
+    tags: ["Kotlin", "Android", "REST APIs", "MVVM", "SQLite"],
+    linkText: "Ver Repositorio",
+    linkUrl: "https://github.com/Ailyn-Altunar/kpopApp.git",
+  },
+  {
+    title: "Finanza sana (Aplicación Móvil)",
+    desc: "Aplicación móvil que permite a los usuarios gestionar sus finanzas personales. Incluye funcionalidades como registro de gastos, ingresos, presupuestos, categorías y reportes.",
+    tags: ["Kotlin", "Android", "REST APIs", "MVVM", "SQLite"],
+    linkText: "Ver Repositorio",
+    linkUrl: "https://github.com/Ailyn-Altunar/FinanzaSanaAndroid1.git",
   },
 ];
 
 const EXPERIENCE = [
   {
-    period: "2026 — Actual",
-    role: "Desarrolladora Backend & DBA Jr.",
-    company: "TechData Solutions",
-    desc: "Diseño y optimización de esquemas PostgreSQL, creación de APIs REST con FastAPI, generación de documentación técnica con Swagger y Confluence.",
+    period: "Junio - En desarrollo 2026",
+    role: "Administradora de Base de datos",
+    company: "Proyecto academico",
+    desc: "Diseño y optimización de esquemas PostgreSQL, creación de scripts SQL, generación de documentación técnica .",
   },
   {
-    period: "2023 — 2025",
-    role: "Analista de Bases de Datos",
-    company: "Corporativo Nexum",
-    desc: "Administración de instancias MySQL y Oracle, escritura de procedimientos almacenados, normalización de modelos de datos heredados y elaboración de reportes SQL.",
+    period: "Abril 2026",
+    role: "Backend developer",
+    company: "Proyecto academico",
+    desc: "Desarrollo de una API REST con Kotlin, utilizando Ktor como framework, PostgreSQL como base de datos relacional y Swagger como herramienta de documentación.",
   },
   {
-    period: "2021 — 2022",
-    role: "Practicante de Desarrollo",
-    company: "StartupMX",
-    desc: "Soporte en migraciones de datos, documentación de esquemas con herramientas ER y scripting Python para procesos ETL básicos.",
+    period: "Septimebre - Diciembre 2025",
+    role: "Base de datos",
+    company: "Proyecto academico",
+    desc: "Diseño de base de datos relacionales, diagrama entidad - relacion, normalización de base de datos, consultas SQL, scripts SQL.",
   },
 ];
 
@@ -230,16 +244,16 @@ export default function App() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto w-full px-8 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-4xl mx-auto w-full px-8 pt-32 pb-24 flex flex-col items-center text-center gap-8">
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col items-center gap-8">
 
-            <div className="flex flex-col leading-none">
+            <div className="flex flex-col items-center leading-none">
               <span
                 className="font-['Montserrat',sans-serif] font-black uppercase tracking-tighter"
                 style={{ fontSize: "clamp(72px,10vw,120px)", color: "#ede9fe" }}
               >
-                CÓDIGO
+                DATABASE
               </span>
               <span
                 className="font-['Montserrat',sans-serif] font-black uppercase tracking-tighter"
@@ -251,19 +265,19 @@ export default function App() {
                 className="font-['Montserrat',sans-serif] font-black uppercase tracking-tighter"
                 style={{ fontSize: "clamp(72px,10vw,120px)", color: "#ede9fe" }}
               >
-                DISEÑO
+                BACKEND
               </span>
             </div>
 
             <p
-              className="text-lg md:text-xl leading-relaxed max-w-md"
+              className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto"
               style={{ color: "#c4b5fd" }}
             >
               Construyo experiencias digitales, busco la excelencia del código y el diseño,
               de la arquitectura a la gráfica.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => scrollTo("#contact")}
                 className="px-7 py-3.5 rounded-lg text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
@@ -284,7 +298,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className="flex items-center gap-5 pt-2">
+            <div className="flex items-center justify-center gap-5 pt-2">
               {[
                 { href: "www.linkedin.com/in/ailyn-altunar", icon: <Linkedin size={22} /> },
                 { href: "https://github.com/Ailyn-Altunar", icon: <Github size={22} /> },
@@ -301,45 +315,6 @@ export default function App() {
                   {s.icon}
                 </a>
               ))}
-            </div>
-          </div>
-          <div className="flex justify-center md:justify-end">
-            <div
-              className="relative w-[280px] md:w-[360px] aspect-[3/4] flex-shrink-0 flex flex-col items-center justify-center bg-[#13102a] text-center p-6 gap-4 select-none overflow-hidden"
-              style={{
-                border: "5px solid #c084fc",
-                boxShadow: "0 0 48px rgba(192,132,252,0.20)",
-              }}
-            >
-              {/* Decoraciones de fondo premium */}
-              <div 
-                className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{
-                  backgroundImage: "radial-gradient(#a78bfa 1px, transparent 1px)",
-                  backgroundSize: "20px 20px"
-                }}
-              />
-              <div 
-                className="absolute w-[200px] h-[200px] rounded-full pointer-events-none opacity-20"
-                style={{
-                  background: "radial-gradient(circle, #c084fc 0%, transparent 70%)"
-                }}
-              />
-              
-              <Camera size={44} className="text-[#a78bfa] relative z-10 animate-pulse" />
-              
-              <span className="font-mono text-xs tracking-widest text-[#c4b5fd]/80 uppercase max-w-[200px] leading-relaxed relative z-10">
-                próximamente fotografía..........
-              </span>
-
-              <div
-                className="absolute -bottom-3 -right-3 w-16 h-16 pointer-events-none"
-                style={{ borderBottom: "3px solid #a78bfa", borderRight: "3px solid #a78bfa" }}
-              />
-              <div
-                className="absolute -top-3 -left-3 w-16 h-16 pointer-events-none"
-                style={{ borderTop: "3px solid #a78bfa", borderLeft: "3px solid #a78bfa" }}
-              />
             </div>
           </div>
 
@@ -362,25 +337,8 @@ export default function App() {
                 src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop&auto=format"
                 alt="Programadora trabajando con bases de datos"
                 className="w-full h-full object-cover"
-                style={{ opacity: 0.55, filter: "saturate(0.8)" }}
+                style={{ opacity: 0.8, filter: "saturate(0.85)" }}
               />
-              <div
-                className="absolute bottom-0 left-0 right-0 p-5 grid grid-cols-3 gap-3"
-                style={{ background: "linear-gradient(to top, rgba(10,8,16,0.95), transparent)" }}
-              >
-                {[
-                  { n: "3+", label: "Años exp." },
-                  { n: "12+", label: "Proyectos" },
-                  { n: "5+", label: "Motores DB" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <p className="text-2xl font-bold font-['Plus_Jakarta_Sans',sans-serif]" style={{ color: "#c084fc" }}>
-                      {s.n}
-                    </p>
-                    <p className="text-xs font-mono" style={{ color: "#c4b5fd" }}>{s.label}</p>
-                  </div>
-                ))}
-              </div>
             </div>
             <div className="absolute -bottom-3 -right-3 w-20 h-20 pointer-events-none" style={{ borderBottom: "2px solid rgba(192,132,252,0.4)", borderRight: "2px solid rgba(192,132,252,0.4)" }} />
           </div>
