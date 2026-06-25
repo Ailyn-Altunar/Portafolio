@@ -4,6 +4,7 @@ import {
   Server,
   FileText,
   Github,
+  MessageCircle,
   Linkedin,
   Mail,
   ExternalLink,
@@ -526,7 +527,8 @@ export default function App() {
                   {[
                     { icon: <Mail size={16} />, label: "ailyn.hernandez.altunar@gmail.com", href: "mailto:ailyn.hernandez.altunar@gmail.com" },
                     { icon: <Github size={16} />, label: "github.com/Ailyn-Altunar", href: "https://github.com/Ailyn-Altunar" },
-                    { icon: <Linkedin size={16} />, label: "linkedin.com/in/ailyn-altunar", href: "www.linkedin.com/in/ailyn-altunar" },
+                    { icon: <Linkedin size={16} />, label: "linkedin.com/in/ailyn-altunar", href: "https://www.linkedin.com/in/ailyn-altunar" },
+                    { icon: <MessageCircle size={16} />, label: "whatsapp: +52 123 456 7890", href: "https://wa.me/521234567890" }
                   ].map((link) => (
                     <a
                       key={link.label}
